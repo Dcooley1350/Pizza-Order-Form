@@ -1,3 +1,8 @@
+// Business Logic for User.
+
+var User
+
+
 // Business Logic for order
 
 var Order = function (totalPrice,pizzas,method) {
@@ -63,3 +68,17 @@ Pizza.prototype.buildPizza = function() {
 };
 
 //Front End Logic
+
+
+
+$(document).ready(function()  {
+
+  $("form#new-contact").submit(function(event) {
+    event.preventDefault();
+    var inputtedFirstName = $("input#new-first-name").val();
+    var inputtedLastName = $("input#new-last-name").val();
+    var inputtedPhoneNumber = $("input#new-phone-number").val();
+    var inputtedEmail = $("input#new-email").val();
+    var inputtedPhysicalAddress = $("input#new-address").val();
+
+  })
