@@ -48,21 +48,21 @@ var Pizza = function (size, toppings, style, price) {
   this.price = price;
 };
 
-Pizza.prototype.calcPrice = function() {
-  if (this.size = "Bagel Bite") {
-  return(10 + (this.toppings.length * .5));
+Pizza.prototype.calcPrice = function(){
+  if (this.size == "Small") {
+  return(10 + (this.toppings.length * .5))
   }
-  else if (this.size = "Small") {
-    return(15 + (this.toppings.length * .75));
+  else if (this.size == "Bagel Bite") {
+    return(15 + (this.toppings.length * .75))
   }
-  else if (this.size = "Medium") {
-    return(20 + (this.toppings.length *  1));
+  else if (this.size == "Medium") {
+    return(20 + (this.toppings.length *  1))
   }
-  else if (this.size = "large") {
-    return(25 + (this.toppings.length * 1.5));
+  else if (this.size == "large") {
+    return(25 + (this.toppings.length * 1.5))
   }
-  else if (this.size = "'Murica") {
-    return(30 + (this.toppings.length * 2));
+  else if (this.size == "'Murica") {
+    return(30 + (this.toppings.length * 2))
   }
 };
 
@@ -108,9 +108,9 @@ $(document).ready(function()  {
   $("form#pizza-info").submit(function(event) {
     var allToppings = []
     event.preventDefault();
-    var size = $("#size").val();
+    var newSize = $("#input-size").val();
     var style = $("#style").val();;
-    console.log(size)
+    console.log(newSize)
     $("input:checkbox[name=meat-toppings]:checked").each(function(){
       var meatToppings = $(this).val();
       allToppings.push(meatToppings);
@@ -119,11 +119,13 @@ $(document).ready(function()  {
       var veggieToppings = $(this).val();
       allToppings.push(veggieToppings);
     });
-    var newPizza = new Pizza(size, allToppings, style)
-   newPizza.price = newPizza.calcPrice()
+    var newPizza = new Pizza(newSize, allToppings, style)
+    console.log(newPizza.size)
+   console.log(newPizza.size)
    newPizza.display()
-   console.log(newPizza.price)
-    console.log(newPizza)
+   console.log(newPizza.size)
+
+
     var method = $("#method").val();
     $(".pizza-show").show();
     $("#method-return").text(`${method}`);
