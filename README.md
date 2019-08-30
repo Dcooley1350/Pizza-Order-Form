@@ -1,37 +1,44 @@
-# _{Application Name}_
+# _Pizza Order Form_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _{Brief description of application}, {8/30/2019}_
 
-#### By _**{List of contributors}**_
+#### By _**Devin Cooley**_
 
 ## Description
 
 _{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
 
+##Specifications
+
+| Spec                      |Input          | Output |
+|:---------------------------|:-------------|:------|
+|Prompts user for name, phone number, email address, and physical address.|Dirk Pit, 5416838319, dirk@pit.net, 400 SE 6th Ave, Portland OR. 97401|Displays in Receipt: Dirk Pit, 5416838319, dirk@pit.net, 400 SE 6th Ave, Portland OR. 97401|
+|Allows user to select toppings for a pizza.|User checks boxes next to 'olives' and 'anchovies'. |Receipt displays 'Olives' and 'anchovies'.|
+|Prompts user to select a size of pizza.|User selects 'Large'. |Receipt displays 'Large'.|
+|Prompts user to select 'delivery' or 'takeout'.|User selects 'delivery'.| Receipt displays 'delivery'|
+|Application takes inputs for pizza toppings, size, and delivery/takeout and calculates a price|'Anchovies', 'Olives'<br>'Large'<br>'Delivery'|Receipt displays 'Your total for this order will be $##.##'|
+|Application allows user to delete a pizza.|User clicks delete button on 'Pizza1'|Receipt no longer displays 'Pizza1' and total price reflects pizza deletion.|
+|Application allows users to order multiple pizzas, displays both pizza, and calculates a total for the whole order|'Pizza1'<br>'Pizza2'|Receipt displays 'Pizza1 <br> Pizza2 <br> Your total for this order will be $##.##'|
+|Application displays a final order receipt after user confirms order.|User clicks button to confirm order|Receipt is displayed that shows contents of order and total price.|
+
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+_Simply load this application in your web browser._
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_There are no known bugs at this time._
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_Questions and comments may be addressed to Devin Cooley @dcooley1350@gmail.com_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_{This application was created using HTML, JavaScript, and CSS. Bootstrap and JQuery were implemented.}_
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+*This software is licensed under the MIT License*
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Copyright (c) 2016 **_Devin Cooley_**
