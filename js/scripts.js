@@ -130,9 +130,4 @@ $(document).ready(function()  {
     $("#hide-pizza").hide();
     $(".final-summary").show()
   });
-
-  $("btn .place-order").click(function(event){
-    $(".final-summary").show();
-    $("#hide-customer").hide();
-  });
 });
