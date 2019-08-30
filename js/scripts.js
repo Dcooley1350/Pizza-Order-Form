@@ -10,8 +10,21 @@ Order.prototype.compileOrder = function() {
   this.pizzas.push()//write loop for adding pizzas here.
 };
 Order.prototype.calcTotalPrice = function() {
-    this.totalPrice=
-  };
+  this.totalPrice = this.pizzas.foreach(function(total){
+    this.pizzas.price += total
+    return(total)
+  });
+  if (this.method = "Delivery") {
+    this.totalPrice + 5
+  }
+  else {
+    this.totalPrice + 1
+  }
+};
+
+Order.prototype.addPizza = function () {
+  this.pizzas.push
+}
 
 // Business Logic for Pizza
 
@@ -19,6 +32,7 @@ var Pizza = function (price,toppings,size) {
   this.price = price;
   this.toppings = toppings;
   this.size =  size;
+
 };
 
 Pizza.prototype.calcPrice = function() {
