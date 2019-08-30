@@ -75,7 +75,13 @@ Pizza.prototype.calcPrice = function() {
 // };
 
 //Front End Logic
-
+Customer.prototype.display = function(newCustomer) {
+  $("#display-first-name").text(this.firstName);
+  $("#display-last-name").text(this.lastName});
+  $("#display-phone").text(this.phoneNumber});
+  $("#display-email").text(this.emailAddress);
+  $("#display-address").text(this.physicalAddress);
+};
 
 
 $(document).ready(function()  {
@@ -90,6 +96,7 @@ $(document).ready(function()  {
 
     var newCustomer = new Customer(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmail, inputtedPhysicalAddress);
 
+    newCustomer.display()
     $("#customer-info").hide();
     $(".change-info").show();
 
@@ -110,6 +117,6 @@ $(document).ready(function()  {
     });
     var newPizza = new Pizza(size, allToppings, style)
     var method = $("#method").val();
-    
+
   });
 });
