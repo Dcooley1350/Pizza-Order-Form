@@ -18,7 +18,7 @@
           <h1>Order a Zaa here!<h1>
           </div>
           <div class="panel panel-info">
-            <form class="order-info">
+            <form id="customer-info">
               <div class="panel-heading">
                 <h2 class="panel-title">Order Info:</h2>
               </div>
@@ -47,7 +47,7 @@
                 <button class="btn-success btn-lg btn-block change-info">Change Info</button>
               </div>
             </form>
-            <form class="pizza-info">
+            <form id="pizza-info">
               <div class="panel-heading">
                 <h2 class="panel-title">Build Your ZAAA:</h2>
               </div>
@@ -83,7 +83,12 @@
                   <option>Chicagaaaa</option>
                   <option>Vegan, gluten free, kosher, paleo, dirt cracker crust</option>
                 </select>
-                <button class="btn-success btn-lg btn-block add-pizza">Add Pizza to Order</button>
+                <h2>Pickup or Delivery?</h2>
+                <select class="form-control" id="style">
+                  <option>Pickup</option>
+                  <option>Delivery</option>
+                </select>
+                <button type="submit" class="btn-success btn-lg btn-block add-pizza">Add Pizza to Order</button>
               </div>
             </form>
           </div>

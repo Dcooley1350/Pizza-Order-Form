@@ -1,10 +1,11 @@
 // Business Logic for User.
 
-var Customer = function (firstName, lastName, phoneNumber, emailAddress, inputtedPhysicalAddress) {
+var Customer = function (firstName, lastName, phoneNumber, emailAddress, physicalAddress) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.phoneNumber = phoneNumber;
   this.emailAddress = emailAddress;
+  this.physicalAddress = physicalAddress;
 }
 
 
@@ -40,11 +41,11 @@ Order.prototype.addMethod = function(
 
 // Business Logic for Pizza
 
-var Pizza = function (price,toppings,size) {
+var Pizza = function (price, toppings, size, style) {
   this.price = price;
   this.toppings = toppings;
   this.size =  size;
-
+  this.style = style;
 };
 
 Pizza.prototype.calcPrice = function() {
@@ -66,19 +67,20 @@ Pizza.prototype.calcPrice = function() {
 };
 
 
-Pizza.prototype.buildPizza = function() {
-  this.toppings.push(allToppings);
-  this.price.push(pizzaPrice);
-  this.size.push(pizzaSize);
-};
+// Pizza.prototype.buildPizza = function() {
+//   this.toppings.push(allToppings);
+//   this.price.push(pizzaPrice);
+//   this.size.push(pizzaSize);
+//   this.style.push(pizzaStle);
+// };
 
 //Front End Logic
 
 
 
 $(document).ready(function()  {
-
-  $("form#new-contact").submit(function(event) {
+  //Form that collects customer info and stores it in customer object.
+  $("form#customer-info").submit(function(event) {
     event.preventDefault();
     var inputtedFirstName = $("input#new-first-name").val();
     var inputtedLastName = $("input#new-last-name").val();
@@ -86,4 +88,28 @@ $(document).ready(function()  {
     var inputtedEmail = $("input#new-email").val();
     var inputtedPhysicalAddress = $("input#new-address").val();
 
-  })
+    var newCustomer = new Customer(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmail, inputtedPhysicalAddress);
+
+    $("#customer-info").hide();
+    $(".change-info").show();
+
+  });
+  //Form that collects pizza info and stores it in customer objects.
+  $("form#pizza-info").submit(function(event) {
+    var allToppings = []
+    event.preventDefault();
+    var size = $("#size").val();
+    var style = $("#style").val();;
+    $("input:checkbox[name=meat-toppings]:checked").each(function(){
+      var meatToppings = $(this).val();
+      allToppings.push(meatToppings);
+    });
+    $("input:checkbox[name=veggie-toppings]:checked").each(function(){
+      var veggieToppings = $(this).val();
+      allToppings.push(veggieToppings);
+    });
+    var newPizza = new Pizza(size, allToppings, style)
+    var method = $("#method").val();
+    
+  });
+});
