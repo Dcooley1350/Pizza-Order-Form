@@ -1,6 +1,11 @@
 // Business Logic for User.
 
-var User
+var Customer = function (firstName, lastName, phoneNumber, emailAddress, inputtedPhysicalAddress) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.phoneNumber = phoneNumber;
+  this.emailAddress = emailAddress;
+}
 
 
 // Business Logic for order
