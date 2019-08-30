@@ -50,10 +50,8 @@
             </form>
             <form id="pizza-info">
               <div id="hide-pizza">
-                <div class="panel-heading">
-                  <h2 class="panel-title">Build Your ZAAA:</h2>
-                </div>
                 <div class="panel panel-body">
+                  <h1>Build Your ZAAA:</h1>
                   <div class="form-group">
                     <h2>TOPPINGS:</h2>
                     <h3>MEATY MEATS:</h3>
@@ -95,11 +93,27 @@
               </div>
             </form>
           </div>
+          <div class="final-summary panel panel-info panel-body">
+            <h1>Are you Satisfied with your Order?</h1>
+            <h2>Customer Info:</h2>
+            <h3>First Name: <span id="display-first-name"></h3>
+            <h3>Last Name: <span id="display-last-name"></h3>
+            <h3>Phone Number: <span id="display-phone"></h3>
+            <h3>Email: <span id="display-email"></h3>
+            <h3>Address: <span id="display-address"></h3>
+            <h2>Pizza:</h2>
+            <h3>Size: <span id="pizza-size"></span></h3>
+            <h3>Style: <span id="pizza-style"></span></h3>
+            <ul id="pizza-toppings">
+            </ul>
+            <h3>Price: <span id="pizza-price"></span></h3>
+            <button class="btn-success btn-lg btn-block place-order">Place Order</button>
+          </div>
+          <div class="method-show panel panel-info panel-body">
+            <h2>For: <span id="method-return"></span></h2>
+          </div>
         </div>
         <div class="col-md-4">
-          <div class="panel panel-info panel-heading">
-            <h1 >Order Summary:</h2>
-          </div>
           <div class="customer-info panel panel-info panel-body">
             <h2>Customer Info:</h2>
             <h3>First Name: <span id="display-first-name"></h3>
@@ -120,6 +134,9 @@
           <div class="method-show panel panel-info panel-body">
             <h2>For: <span id="method-return"></span></h2>
           </div>
+        </div>
+        <div class="thank-you jumbotron">
+          <h1>Thank You Your Order Has Been Placed!</h1>
         </div>
       </div>
     </div>

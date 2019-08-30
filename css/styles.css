@@ -6,8 +6,8 @@
   margin-top: 16px;
 }
 
-.customer-info {
-  display: none;
+.final-summary {
+  display:none;
 }
 
 #hide-pizza {
@@ -20,4 +20,12 @@
 
 .method-show {
   display: none;
+}
+
+.thank-you {
+  display:none;
+}
+
+.customer-info {
+  display:none;
 }

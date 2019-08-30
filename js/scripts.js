@@ -120,16 +120,19 @@ $(document).ready(function()  {
       allToppings.push(veggieToppings);
     });
     var newPizza = new Pizza(newSize, allToppings, style)
-    console.log(newPizza.size)
-   console.log(newPizza.size)
-   newPizza.display()
-   console.log(newPizza.size)
 
+   newPizza.display()
 
     var method = $("#method").val();
     $(".pizza-show").show();
     $("#method-return").text(`${method}`);
     $(".method-show").show();
+    $("#hide-pizza").hide();
+    $(".final-summary").show()
+  });
 
+  $("btn .place-order").click(function(event){
+    $(".final-summary").show();
+    $("#hide-customer").hide();
   });
 });
