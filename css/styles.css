@@ -2,10 +2,14 @@
   text-align: center;
 }
 
-.change-info {
+.add-pizza {
+  margin-top: 16px;
+}
+
+.customer-info {
   display: none;
 }
 
-.add-pizza {
-  margin-top: 16px;
+#hide-pizza {
+  display: none;
 }

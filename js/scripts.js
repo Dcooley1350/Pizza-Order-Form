@@ -25,7 +25,7 @@ Order.prototype.calcTotalPrice = function() {
   });
   if (this.method = "Delivery") {
     this.totalPrice + 5
-  };
+  }
   else {
     this.totalPrice + 1
   };
@@ -35,7 +35,7 @@ Order.prototype.addPizza = function () {
   this.pizzas.push(newPizza);
 };
 
-Order.prototype.addMethod = function(
+Order.prototype.addMethod = function(){
   this.method.push(deliveryMethod);
 };
 
@@ -77,8 +77,8 @@ Pizza.prototype.calcPrice = function() {
 //Front End Logic
 Customer.prototype.display = function(newCustomer) {
   $("#display-first-name").text(this.firstName);
-  $("#display-last-name").text(this.lastName});
-  $("#display-phone").text(this.phoneNumber});
+  $("#display-last-name").text(this.lastName);
+  $("#display-phone").text(this.phoneNumber);
   $("#display-email").text(this.emailAddress);
   $("#display-address").text(this.physicalAddress);
 };
@@ -86,8 +86,9 @@ Customer.prototype.display = function(newCustomer) {
 
 $(document).ready(function()  {
   //Form that collects customer info and stores it in customer object.
-  $("form#customer-info").submit(function(event) {
+  $("form#customer-form").submit(function(event) {
     event.preventDefault();
+    console.log("tacos");
     var inputtedFirstName = $("input#new-first-name").val();
     var inputtedLastName = $("input#new-last-name").val();
     var inputtedPhoneNumber = $("input#new-phone-number").val();
@@ -95,10 +96,11 @@ $(document).ready(function()  {
     var inputtedPhysicalAddress = $("input#new-address").val();
 
     var newCustomer = new Customer(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmail, inputtedPhysicalAddress);
-
-    newCustomer.display()
-    $("#customer-info").hide();
-    $(".change-info").show();
+    console.log(newCustomer)
+    newCustomer.display();
+    $("#hide-customer").hide();
+    $(".customer-info").show();
+    $("#hide-pizza").show();
 
   });
   //Form that collects pizza info and stores it in customer objects.
