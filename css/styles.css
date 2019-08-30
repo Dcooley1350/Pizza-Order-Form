@@ -13,3 +13,11 @@
 #hide-pizza {
   display: none;
 }
+
+.pizza-show {
+  display: none;
+}
+
+.method-show {
+  display: none;
+}

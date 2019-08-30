@@ -41,11 +41,11 @@ Order.prototype.addMethod = function(){
 
 // Business Logic for Pizza
 
-var Pizza = function (price, toppings, size, style) {
-  this.price = price;
-  this.toppings = toppings;
+var Pizza = function (size, toppings, style, price) {
   this.size =  size;
+  this.toppings = toppings;
   this.style = style;
+  this.price = price;
 };
 
 Pizza.prototype.calcPrice = function() {
@@ -67,14 +67,8 @@ Pizza.prototype.calcPrice = function() {
 };
 
 
-// Pizza.prototype.buildPizza = function() {
-//   this.toppings.push(allToppings);
-//   this.price.push(pizzaPrice);
-//   this.size.push(pizzaSize);
-//   this.style.push(pizzaStle);
-// };
-
 //Front End Logic
+
 Customer.prototype.display = function(newCustomer) {
   $("#display-first-name").text(this.firstName);
   $("#display-last-name").text(this.lastName);
@@ -83,12 +77,20 @@ Customer.prototype.display = function(newCustomer) {
   $("#display-address").text(this.physicalAddress);
 };
 
+Pizza.prototype.display = function (){
+  $("#pizza-price").text(this.calcPrice());
+  $("#pizza-size").text(this.size);
+  $("#pizza-style").text(this.style);
+  this.toppings.forEach(function(topping) {
+    $("#pizza-toppings").append("<li>" + topping + "</li>");
+  });
+}
+
 
 $(document).ready(function()  {
   //Form that collects customer info and stores it in customer object.
   $("form#customer-form").submit(function(event) {
     event.preventDefault();
-    console.log("tacos");
     var inputtedFirstName = $("input#new-first-name").val();
     var inputtedLastName = $("input#new-last-name").val();
     var inputtedPhoneNumber = $("input#new-phone-number").val();
@@ -96,7 +98,6 @@ $(document).ready(function()  {
     var inputtedPhysicalAddress = $("input#new-address").val();
 
     var newCustomer = new Customer(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmail, inputtedPhysicalAddress);
-    console.log(newCustomer)
     newCustomer.display();
     $("#hide-customer").hide();
     $(".customer-info").show();
@@ -109,6 +110,7 @@ $(document).ready(function()  {
     event.preventDefault();
     var size = $("#size").val();
     var style = $("#style").val();;
+    console.log(size)
     $("input:checkbox[name=meat-toppings]:checked").each(function(){
       var meatToppings = $(this).val();
       allToppings.push(meatToppings);
@@ -118,7 +120,14 @@ $(document).ready(function()  {
       allToppings.push(veggieToppings);
     });
     var newPizza = new Pizza(size, allToppings, style)
+   newPizza.price = newPizza.calcPrice()
+   newPizza.display()
+   console.log(newPizza.price)
+    console.log(newPizza)
     var method = $("#method").val();
+    $(".pizza-show").show();
+    $("#method-return").text(`${method}`);
+    $(".method-show").show();
 
   });
 });
